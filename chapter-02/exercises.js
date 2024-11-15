@@ -102,7 +102,25 @@ LOGS =>
 */
 
 function drawChessboard(x) {
-
+  // initialize empty string to hold chessboard
+  let chessBoard = "";
+  // loop through row and initialize string to hold row
+  for (let i = 0; i < x; i++){
+    let string = "";
+  // loop through columns
+    for (let j = 0; j < x; j++){
+  // if the sum of the row and column are even leave a space
+      if ((i + j) % 2 === 0){
+         string += " ";
+  // else leave a #
+      } else {
+        string += "#";
+      }
+    }
+  // add board and current row followed by n 
+    chessBoard += string + "\n";
+  }
+console.log(chessBoard)
 
 }
 
