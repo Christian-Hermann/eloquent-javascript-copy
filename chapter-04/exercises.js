@@ -112,11 +112,13 @@ function nth(list, n) {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
-  if (typeof x !== 'object' && typeof y !== 'objet'){
+function deepEqual(x, y) {
+  if (typeof x !== 'object' && typeof y !== 'object'){
     return x === y;
   }
   if (typeof x !== 'object' || typeof y !== 'object'){
+    return false;
+
     let xKeys = Object.keys(x);
     let yKeys = Object.keys(y);
 
@@ -125,14 +127,14 @@ function deepEqual() {
     }
 
     for (let i = 0; i < xKeys.length; i++){
-      if (!yKeys.includes(xKeys[i] || !deepEqual(x[xKeys[i]])){
-      
-      }
+      if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
       return false;
+      }
+      
     }
-    
+    return true;
   }
-
+  
 }
 
 ////////////////////////////////////////////////////////////////////////////////
