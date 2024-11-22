@@ -113,6 +113,25 @@ function nth(list, n) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function deepEqual() {
+  if (typeof x !== 'object' && typeof y !== 'objet'){
+    return x === y;
+  }
+  if (typeof x !== 'object' || typeof y !== 'object'){
+    let xKeys = Object.keys(x);
+    let yKeys = Object.keys(y);
+
+    if (xKeys.length !== yKeys.length){
+      return false;
+    }
+
+    for (let i = 0; i < xKeys.length; i++){
+      if (!yKeys.includes(xKeys[i] || !deepEqual(x[xKeys[i]])){
+      
+      }
+      return false;
+    }
+    
+  }
 
 }
 
