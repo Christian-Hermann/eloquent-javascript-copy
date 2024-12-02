@@ -22,8 +22,19 @@ for (let currentValue = value; test(currentValue); currentValue = update(current
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function every() {
+function every(array, func) {
+for (var i = 0; i < array.length; i++){
+  if (!func(arr[i], i, arr)){
+    return false
+  }
+}
+ return true;
+}
 
+function every(array, func){
+  return !array.some(function(element, index, array){
+    return !func(element, index, array);
+  });
 }
 
 // /////////////////////////////////////////////////////////////////////////////
